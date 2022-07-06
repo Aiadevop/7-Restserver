@@ -14,8 +14,21 @@ const usuariosPut = (req, res) => {
 }
 
 const usuariosPost = (req, res) => {
+
+    // const body = req.body;
+
+    // res.status(201).json({
+    //     "msg": "post API-Controlador",
+    //     body
+    // })
+
+    //Se puede hacer desestructurando el body
+    const { nombre, edad } = req.body;
+
     res.status(201).json({
-        "msg": "post API-Controlador"
+        "msg": "post API-Controlador",
+        nombre,
+        edad
     })
 }
 

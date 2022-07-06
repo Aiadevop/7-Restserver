@@ -21,3 +21,8 @@
         Se genera la clave usuariosPath para que todos puedan conocer la ruta de las routes.
         Esta clave simplemente se escribirá en el navegador para conectar con las routes.
 * Lo del interior de las rutas debería estar en un archivo independiente, llamado controllers.
+* En los middleware
+        //Lectura y parseo del body
+        //Cualquier información del front-end la va a intentar serializar a un JSON
+        this.app.use(express.json());
+        Imagen: Envío de json desde el frontend
