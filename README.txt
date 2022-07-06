@@ -26,3 +26,4 @@
         //Cualquier información del front-end la va a intentar serializar a un JSON
         this.app.use(express.json());
         Imagen: Envío de json desde el frontend
+* Utilizamos query para el get imagen get con query

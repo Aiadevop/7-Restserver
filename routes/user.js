@@ -13,7 +13,7 @@ const router = Router();
 router.get('/', usuariosGet);
 
 //Actualizar DATA: ej. datos actualizados
-router.put('/', usuariosPut);
+router.put('/:id', usuariosPut);
 
 //Nuevos recursos: ej. usuario creado
 router.post('/', usuariosPost);
