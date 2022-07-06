@@ -24,7 +24,37 @@ class Server {
     //Método con las rutas.
     routes() {
         this.app.get('/api', (req, res) => {
-            res.send('Hello World')
+            res.status(200).json({
+                "msg": "get API"
+            })
+        })
+
+        //Actualizar DATA: ej. datos actualizados
+        this.app.put('/api', (req, res) => {
+            res.json({
+                "msg": "put API"
+            })
+        })
+
+        //Nuevos recursos: ej. usuario creado
+        this.app.post('/api', (req, res) => {
+            res.json({
+                "msg": "post API"
+            })
+        })
+
+        //Borra algo
+        this.app.delete('/api', (req, res) => {
+            res.json({
+                "msg": "delete API"
+            })
+        })
+
+        //Ruta
+        this.app.patch('/api', (req, res) => {
+            res.json({
+                "msg": "patch API"
+            })
         })
     }
 

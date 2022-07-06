@@ -14,4 +14,5 @@
 * Creamos la carpeta public
         index.html (ahí meteriamos nuestra página web.)
         se introducen los middleware en server.js con la palabra clave .use 
+* Establecemos el método de rutas como un json en vez de html 
         
