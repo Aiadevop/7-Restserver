@@ -17,3 +17,7 @@
 * Establecemos el método de rutas como un json en vez de html 
 * Instalar npm cors (middleware) - npm i cors
         Nos permite proteger nuestro servidor.
+* Extraemos las routes a una nueva carpeta para que sea más fácil leer la información del servidor 
+        Se genera la clave usuariosPath para que todos puedan conocer la ruta de las routes.
+        Esta clave simplemente se escribirá en el navegador para conectar con las routes.
+* Lo del interior de las rutas debería estar en un archivo independiente, llamado controllers.
