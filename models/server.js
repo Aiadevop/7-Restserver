@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 class Server {
 
@@ -17,6 +18,9 @@ class Server {
 
     middlewares() {
 
+        //CORS
+        this.app.use(cors());
+
         //.use es la palabra clave para determinar que es un middleware.
         this.app.use(express.static('public'));
     }
@@ -31,14 +35,14 @@ class Server {
 
         //Actualizar DATA: ej. datos actualizados
         this.app.put('/api', (req, res) => {
-            res.json({
+            res.status(400).json({
                 "msg": "put API"
             })
         })
 
         //Nuevos recursos: ej. usuario creado
         this.app.post('/api', (req, res) => {
-            res.json({
+            res.status(201).json({
                 "msg": "post API"
             })
         })
