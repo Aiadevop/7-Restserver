@@ -28,4 +28,16 @@
         Imagen: Envío de json desde el frontend
 * Utilizamos query para el get imagen get con query
 * git tag -a v1.0.0 -m "Fin sección 8 RestServer"
-*  git push --tags
+        git push --tags
+* Lo cargo en heroku 
+        Primero creo la app en heroku
+        heroku git:remote -a restserver-webserver-node-8
+        git push heroku main
+        y luego en el package.json -> "start": "node app"
+        Añado a git un nuevo repositorio
+        git push heroku main
+* Crear dos ambientes uno de producción y uno de desarrollo en postman
+        Environments -> + -> Nombre y añadimos variable url, con la dirección heroku 
+        luego ya solo necesitariamos poner {{url}} al inicio de la ruta en postman
+
+
