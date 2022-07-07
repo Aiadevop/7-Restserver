@@ -40,4 +40,12 @@
         Environments -> + -> Nombre y añadimos variable url, con la dirección heroku 
         luego ya solo necesitariamos poner {{url}} al inicio de la ruta en postman
 
+*       CURSO 9
 
+*       Usamos:
+        Mongo Atlas 
+        Mongo Compass 
+        mongoose instalamos con npm i
+        configuramos la carpeta database.
+
+*       Modelo usuario 
