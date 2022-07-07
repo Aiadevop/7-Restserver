@@ -27,3 +27,5 @@
         this.app.use(express.json());
         Imagen: Envío de json desde el frontend
 * Utilizamos query para el get imagen get con query
+* git tag -a v1.0.0 -m "Fin sección 8 RestServer"
+*  git push --tags
