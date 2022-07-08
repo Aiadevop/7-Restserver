@@ -49,3 +49,8 @@
         configuramos la carpeta database.
 
 *       Modelo usuario 
+
+contraseñamongo= gHT29jEMgnPH6F7A
+usuario=Lara
+Node-User
+Ut16wrknEIZxbI8b
