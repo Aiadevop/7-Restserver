@@ -50,7 +50,9 @@
 
 *       Modelo usuario 
 
-contraseñamongo= gHT29jEMgnPH6F7A
-usuario=Lara
-Node-User
-Ut16wrknEIZxbI8b
+USER_NODE_CAFE
+8hjXHupazrP33ZBe
+
+*       Para encriptar la contraseña npm i bcryptjs
+        Y en el post encriptamos la contraseña
+
