@@ -58,3 +58,7 @@ USER_NODE_CAFE
 *       Correo válido -> npm i express-validator
         chequeo el correo en routes
 
+* 124.Validar rol contra base de datos 
+        En Compass creamos una colección y añadimos el data, img: coleccion-roles 
+        En models creamos role.js es el nombre de la colección de Compass sin la s.
+
