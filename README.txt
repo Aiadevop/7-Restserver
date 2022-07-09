@@ -55,4 +55,6 @@ USER_NODE_CAFE
 
 *       Para encriptar la contraseña npm i bcryptjs
         Y en el post encriptamos la contraseña
+*       Correo válido -> npm i express-validator
+        chequeo el correo en routes
 
