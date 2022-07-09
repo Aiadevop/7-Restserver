@@ -62,3 +62,6 @@ USER_NODE_CAFE
         En Compass creamos una colección y añadimos el data, img: coleccion-roles 
         En models creamos role.js es el nombre de la colección de Compass sin la s.
 
+* 125. Centralizar la validación del rol.
+        Creamos la carpeta helpers y así podemos limpiar nuestras routes para cotejar el role con la bd.
+        esRoleValido en db-validators.js
