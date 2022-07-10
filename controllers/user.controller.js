@@ -4,18 +4,21 @@ const bcryptjs = require('bcryptjs');
 
 const Usuario = require('../models/usuario');
 
-const usuariosGet = (req = request, res = response) => {
+const usuariosGet = async(req = request, res = response) => {
 
     //Si no le meto el parametro nombre es no name
-    const { q, nombre = "No name", apikey, page, limit } = req.query;
+    //const { q, nombre = "No name", apikey, page, limit } = req.query;
+
+    //muestra todos los usuarios.
+    //const usuarios = await Usuario.find();
+
+    const { limite = 5, desde = 0 } = req.query;
+    const usuarios = await Usuario.find()
+        .skip(Number(desde))
+        .limit(Number(limite)); //hay que transformar el limite a un numero pq siempre devuevle un String si lo escribimos.
 
     res.status(200).json({
-        "msg": "get API-Controlador",
-        q,
-        nombre,
-        apikey,
-        page,
-        limit
+        usuarios
     })
 }
 
