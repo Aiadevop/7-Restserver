@@ -24,9 +24,6 @@ const usuariosPost = async(req, res = response) => {
     const { nombre, correo, password, rol } = req.body;
     const usuario = new Usuario({ nombre, correo, password, rol });
 
-    //Verificar si el correo existe.
-
-
     //Encriptar la contraseña
     const salt = bcryptjs.genSaltSync(10); //Que número de vueltas de seguridad se le quiere dar.
     usuario.password = bcryptjs.hashSync(password, salt); //encriptarlo en una sola vía.
@@ -40,13 +37,26 @@ const usuariosPost = async(req, res = response) => {
     });
 }
 
-const usuariosPut = (req, res = response) => {
+
+//Actualización de datos de usuario.
+const usuariosPut = async(req, res = response) => {
 
     //params.(nombre que se puso en la ruta.)
     const { id } = req.params;
+    const { _id, password, google, correo, ...resto } = req.body;
+
+    //TO DO validar contra BD
+    //Si nos marcan el password es pq quieren actualizar su contraseña
+    if (password) {
+        const salt = bcryptjs.genSaltSync(10); //Que número de vueltas de seguridad se le quiere dar.
+        resto.password = bcryptjs.hashSync(password, salt);
+    }
+
+    //encuentra un usuario y lo actualiza
+    const usuario = await Usuario.findByIdAndUpdate(id, resto);
 
     res.status(400).json({
-        "msg": "put API-Controlador",
+        usuario,
         id
     })
 }

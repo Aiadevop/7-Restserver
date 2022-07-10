@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos');
-const { esRoleValido, emailExiste } = require('../helpers/db-validators');
+const { esRoleValido, emailExiste, idExiste } = require('../helpers/db-validators');
 
 const {
     usuariosGet,
@@ -18,7 +18,13 @@ const router = Router();
 router.get('/', usuariosGet);
 
 //Actualizar DATA: ej. datos actualizados
-router.put('/:id', usuariosPut);
+router.put('/:id', [
+        //middlewares
+        check('id', 'No es un id válido').isMongoId(),
+        //check('id').custom(idExiste),
+        validarCampos
+    ],
+    usuariosPut);
 
 //Nuevos recursos: ej. usuario creado
 //si router.post{opc1(ruta,controlador) / opc2(ruta,middleware,controlador)}
