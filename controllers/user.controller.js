@@ -10,14 +10,24 @@ const usuariosGet = async(req = request, res = response) => {
     //const { q, nombre = "No name", apikey, page, limit } = req.query;
 
     //muestra todos los usuarios.
-    //const usuarios = await Usuario.find();
+    //const usu = await Usuario.find();
 
     const { limite = 5, desde = 0 } = req.query;
-    const usuarios = await Usuario.find()
+    const usu = Usuario.find({ estado: true }) //le puedo poner condiciones
         .skip(Number(desde))
         .limit(Number(limite)); //hay que transformar el limite a un numero pq siempre devuevle un String si lo escribimos.
 
+    const tot = Usuario.countDocuments({ estado: true });
+
+    //metemos las dos promesas en el mismo await para que se ejecuten
+    //de manera simultanea y que no esperen la una por la otra.
+    const [total, usuarios] = await Promise.all([
+        tot,
+        usu
+    ])
+
     res.status(200).json({
+        total,
         usuarios
     })
 }
