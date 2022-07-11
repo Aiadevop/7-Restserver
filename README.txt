@@ -65,3 +65,6 @@ USER_NODE_CAFE
 * 125. Centralizar la validación del rol.
         Creamos la carpeta helpers y así podemos limpiar nuestras routes para cotejar el role con la bd.
         esRoleValido en db-validators.js
+* 142. Generar un JWT
+        npm i jsonwebtoken
+        
