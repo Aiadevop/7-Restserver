@@ -23,9 +23,9 @@ const idExiste = async(id) => {
         throw new Error(`El id: ${id}, no existe en la BD.`)
     }
 }
+
 module.exports = {
     esRoleValido,
     emailExiste,
     idExiste,
-
 };

@@ -76,7 +76,7 @@ const usuariosPut = async(req, res = response) => {
 
 const usuariosDelete = async(req, res = response) => {
 
-    const { id } = req.params;
+    const { id, estado } = req.params;
 
     //Si queremos borrarlo físicamente.
     //const usuario = await Usuario.findByIdAndDelete(id);
