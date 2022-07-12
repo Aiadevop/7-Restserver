@@ -1,6 +1,8 @@
 //Modelo usuario
 
 const { Schema, model } = require('mongoose');
+const jwt = require('jsonwebtoken');
+const { uid } = require('../helpers/generarJWT');
 
 
 const UsuarioSchema = Schema({
@@ -42,7 +44,8 @@ const UsuarioSchema = Schema({
 UsuarioSchema.methods.toJSON = function() {
 
     //Se saca la versión y el password y todos los demás aparecen.
-    const { __v, password, ...usuario } = this.toObject();
+    const { __v, password, _id, ...usuario } = this.toObject();
+    usuario.uid = _id;
     return usuario;
 }
 

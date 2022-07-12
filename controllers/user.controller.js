@@ -76,15 +76,24 @@ const usuariosPut = async(req, res = response) => {
 
 const usuariosDelete = async(req, res = response) => {
 
-    const { id, estado } = req.params;
+    const { id } = req.params;
+
+    //const uid = req.uid;
+
+    //EL DELETE SOLO FUNCIONA CON USUARIOS ESPECIFICOS EJEMPLO EL ADMIN.
+
+
 
     //Si queremos borrarlo físicamente.
     //const usuario = await Usuario.findByIdAndDelete(id);
 
     const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
+    const usuarioAutenticado = req.usuario;
 
     res.json({
-        "Usuario borrado": usuario
+
+        "Usuario borrado": usuario,
+        "Usuario autenticado": usuarioAutenticado
     })
 }
 
