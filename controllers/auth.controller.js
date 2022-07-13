@@ -61,13 +61,45 @@ const googleSignIn = async (req, res=response) => {
 
     try {
 
-        const googleUser = await googleVerify(id_token);
-        console.log(googleUser);
+        const {nombre, img, correo /*googleUser */} = await googleVerify(id_token);
+
+        //Generar la referencia para el ver si el usuario ya está en la BD
+
+        let usuario = await Usuario.findOne({correo});
+
+        if(!usuario){
+            
+            const data = {
+                nombre,
+                correo,
+                password: ':P',
+                img,
+                google:true,
+                rol : 'USER_ROLE'
+
+            };
+
+            usuario  = new Usuario (data);
+            await usuario.save(usuario);
+        }
+
+        //Si el usuario tiene el estado en falso
+
+        if(!usuario.estado){
+            return res.status(401).json({
+                msg: 'Hable con el administrador, usuario bloqueado'
+            })
+        }
+
+        //Generar el JWT
+        const token = await generarJWT(usuario.id);
 
         res.json ({
             msg:'Todo ok',
-            id_token
+            token,
+            usuario
         })
+
     } catch (error) {
 
         res.status(400).json ({
@@ -75,8 +107,6 @@ const googleSignIn = async (req, res=response) => {
         })
         console.log(error);
     }
-
-
 }
 
 module.exports = {
