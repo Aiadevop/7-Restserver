@@ -3,7 +3,7 @@ const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
-const { esAdminRole } = require('../middlewares/validar-roles');
+const { esAdminRole, tieneRole } = require('../middlewares/validar-roles');
 
 const { esRoleValido, emailExiste, idExiste } = require('../helpers/db-validators');
 
@@ -48,7 +48,8 @@ router.post('/', [
 //Borra algo
 router.delete('/:id', [
     validarJWT,
-    esAdminRole,
+    //esAdminRole, (esto solo vale para AdminRole si queremos + variables distinto middleware, el de abajo.)
+    tieneRole('ADMIN_ROLE', 'VENTAS_ROLE'),
     check('id', 'No es un id válido').isMongoId(),
     check('id').custom(idExiste),
     validarCampos

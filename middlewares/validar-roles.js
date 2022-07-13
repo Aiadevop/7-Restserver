@@ -17,4 +17,28 @@ const esAdminRole = (req, res = response, next) => {
     next();
 }
 
-module.exports = { esAdminRole }
+const tieneRole = (...roles) => {
+
+    return (req, res = response, next) => {
+        if (!req.usuario) {
+            return res.status(500).json({
+                msg: "Se quiere verificar el role sin validar el token."
+            });
+        }
+
+        if (!roles.includes(req.usuario.rol)) {
+            return res.status(401).json({
+                msg: `El servicio requiere uno de estos roles: ${roles}`
+            });
+        }
+        console.log(req.usuario.rol, " ha borrado el usuario.");
+        next();
+
+
+    }
+}
+
+module.exports = {
+    esAdminRole,
+    tieneRole
+}
