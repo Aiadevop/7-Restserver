@@ -67,4 +67,9 @@ USER_NODE_CAFE
         esRoleValido en db-validators.js
 * 142. Generar un JWT
         npm i jsonwebtoken
+*149 HEroku establecer variables de entorno.
+        heroku config -ver las variables de entorno
+        heroku config:set NOMBRE="PASSWORD" (sin espacios)
+
+
         
