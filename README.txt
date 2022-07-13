@@ -96,6 +96,9 @@ URI 2 *
         https://developers.google.com/identity/gsi/web/guides/handle-credential-responses-js-functions?hl=en
         data-callback="handleCredentialResponse"
         6.cambiamos el data_client_id por nuestro client_id
-        7. pegamos el script del callback
+        7. pegamos el script del callback,
+        pero luego hacemos una configuración personalizada.
+        8. verificamos el token en el lado del servidor
+        https://developers.google.com/identity/gsi/web/guides/verify-google-id-token
 
 
