@@ -70,6 +70,9 @@ USER_NODE_CAFE
 *149 HEroku establecer variables de entorno.
         heroku config -ver las variables de entorno
         heroku config:set NOMBRE="PASSWORD" (sin espacios)
-
+        git status para comprobar que todo esta subido o subirlo.
+        git push heroku main
+        heroku logs -n 100 (para poder ver en la terminal lo que pasa en producción)
+        heroku logs -n 100 --tail (mantiene todos los logs)
 
         
