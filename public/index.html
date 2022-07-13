@@ -46,7 +46,7 @@
             //console.log('id_token',response.credential);
             const body = {id_token :response.credential};
 
-                fetch('https://restserver-webserver-node-8.herokuapp.com/api/auth/google',{
+                fetch('https://restserver-webserver-node-8.herokuapp.com',{
                     method:'POST', //POR DEFECTO ES UN GET UN FETCH
                     headers: {
                         'Content-Type':'application/json'
