@@ -30,10 +30,10 @@
         <button id="google_signout">Signout</button>
         <script>
 
-            console.log(window.location.hostname.includes('localhost'));
-            var url = (window.location.hostname.includes('localhost'))
-                ?'http://localhost:8090/api/auth/google'
-                :'https://restserver-webserver-node-8.herokuapp.com/api/auth/google';
+            // console.log(window.location.hostname.includes('localhost'));
+            // var url = (window.location.hostname.includes('localhost'))
+            //     ?'http://localhost:8090/api/auth/google'
+            //     :'https://restserver-webserver-node-8.herokuapp.com/api/auth/google';
 
             function handleCredentialResponse(response) {
             //    // decodeJwtResponse() is a custom function defined by you
@@ -52,7 +52,7 @@
             //console.log('id_token',response.credential);
             const body = {id_token :response.credential};
 
-                fetch(url ,{
+                fetch('https://restserver-webserver-node-8.herokuapp.com/api/auth/google' ,{
                     method:'POST', //POR DEFECTO ES UN GET UN FETCH
                     headers: {
                         'Content-Type':'application/json'

@@ -104,3 +104,9 @@ URI 2 *
         9.Creamos el button signout en html
         10. Subir a heroku
 
+
+
+-------------POSTMAN----- GENERAR DOCUMENTACION-------------------------
+View Documentation
+Publish 
+https://documenter.getpostman.com/view/21497344/UzQsw73y
