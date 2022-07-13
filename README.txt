@@ -100,5 +100,6 @@ URI 2 *
         pero luego hacemos una configuración personalizada.
         8. verificamos el token en el lado del servidor
         https://developers.google.com/identity/gsi/web/guides/verify-google-id-token
-
+        npm install google-auth-library --save
+        9.Creamos el button signout en html
 

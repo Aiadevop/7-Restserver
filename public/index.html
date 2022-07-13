@@ -14,19 +14,22 @@
         <hr>
         <!--data-login_uri="https://your.domain/your_login_endpoint", estaba en el hueco-->
         <script src="https://accounts.google.com/gsi/client" async defer></script>
-        <div id="g_id_onload" 
+        <div id="g_id_onload"
             data-client_id="262616858035-51mfadbquklti22udlp484q2405v1co5.apps.googleusercontent.com"
             data-callback="handleCredentialResponse"
             data-auto_prompt="false"> <!--puede esperar para autenticarse-->
         </div>
-        <div class="g_id_signin" 
-            data-type="standard" 
+        <div class="g_id_signin"
+            data-type="standard"
             data-size="medium"
-            data-theme="outline" 
+            data-theme="outline"
             data-text="sign_in_with"
-            data-shape="rectangular" 
+            data-shape="rectangular"
             data-logo_alignment="left">
         </div>
+        <button id="google_signout">
+            Signout
+        </button>
         <script>
             function handleCredentialResponse(response) {
             //    // decodeJwtResponse() is a custom function defined by you
@@ -54,10 +57,25 @@
                 })
                     .then(resp => resp.json())
                     .then(resp =>{
-                        console.log(resp);
+                        console.log(resp)
+                        localStorage.setItem('email', resp.usuario.correo)
+
                     })
                     .catch(console.warn);
             }
+
+            const button = document.getElementById('google_signout');
+            button.onclick = ()=>{
+                console.log(google.accounts.id)
+                google.accounts.id.disableAutoSelect()
+
+                
+                google.accounts.id.revoke(localStorage.getItem('email'), done =>{
+                            localStorage.clear();
+                            location.reload();
+                        });
+            }
+
           </script>
     </body>
 
