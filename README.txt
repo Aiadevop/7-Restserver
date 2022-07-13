@@ -75,4 +75,27 @@ USER_NODE_CAFE
         heroku logs -n 100 (para poder ver en la terminal lo que pasa en producción)
         heroku logs -n 100 --tail (mantiene todos los logs)
 
+------------- LECCIÓN 11----- GOOGLE SIGN IN----------------------------------
         
+https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid
+
+        1. Creamos consentimientos 
+        2. Creamos credenciales y añadimos dos rutas
+        Orígenes autorizados de JavaScript
+
+Para usar con solicitudes de un navegador
+http://localhost
+URI 1 *
+http://localhost:8090
+URI 2 *
+        3. Generamos un client-id y una contraseña secreta.
+        4. Para personalizar la entrada de google
+        https://developers.google.com/identity/gsi/web/tools/configurator?hl=en
+        5.Colocamos el callback de cuando la autenticacion es exictosa, en vez de la 
+        línea anterior del index.html
+        https://developers.google.com/identity/gsi/web/guides/handle-credential-responses-js-functions?hl=en
+        data-callback="handleCredentialResponse"
+        6.cambiamos el data_client_id por nuestro client_id
+        7. pegamos el script del callback
+
+
