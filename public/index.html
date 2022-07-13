@@ -46,7 +46,7 @@
             //console.log('id_token',response.credential);
             const body = {id_token :response.credential};
 
-                fetch('http://localhost:8090/api/auth/google',{
+                fetch('https://restserver-webserver-node-8.herokuapp.com/api/auth/google',{
                     method:'POST', //POR DEFECTO ES UN GET UN FETCH
                     headers: {
                         'Content-Type':'application/json'
@@ -58,7 +58,7 @@
                         console.log(resp)
                         localStorage.setItem('email', resp.usuario.correo)
 
-                    },'https://restserver-webserver-node-8.herokuapp.com/api/auth/google')
+                    })
 
                     
                     .catch(console.warn);
