@@ -1,9 +1,17 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 
-const { validarCampos } = require('../middlewares/validar-campos');
-const { validarJWT } = require('../middlewares/validar-jwt');
-const { esAdminRole, tieneRole } = require('../middlewares/validar-roles');
+// const { validarCampos } = require('../middlewares/validar-campos');
+// const { validarJWT } = require('../middlewares/validar-jwt');
+// const { esAdminRole, tieneRole } = require('../middlewares/validar-roles');
+
+//esto es equivalente a lo de arriba con el index.
+const {
+    validarCampos,
+    validarJWT,
+    esAdminRole,
+    tieneRole
+} = require('../middlewares') //esto apunta al index de los middlewares
 
 const { esRoleValido, emailExiste, idExiste } = require('../helpers/db-validators');
 
@@ -14,10 +22,6 @@ const {
     usuariosDelete,
     usuariosPatch
 } = require('../controllers/user.controller');
-
-
-
-
 
 const router = Router();
 
