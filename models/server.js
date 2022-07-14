@@ -13,6 +13,7 @@ class Server {
         //clave para entrar en las routes.
         this.usuariosPath = '/api/usuarios';
         this.authPath = '/api/auth';
+        this.categoriasPath= '/api/categorias';
 
         //Conectar a la base de datos
         this.conectarDB();
@@ -46,6 +47,8 @@ class Server {
 
         this.app.use(this.authPath, require('../routes/auth'));
         this.app.use(this.usuariosPath, require('../routes/user'));
+        this.app.use(this.categoriasPath, require('../routes/categorias'));
+
     }
 
     //Puerto que escucha
