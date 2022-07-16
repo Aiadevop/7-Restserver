@@ -14,7 +14,7 @@ const validarCategoria = async(req = request, res = response, next) => {
 
     try {
         
-        const categoriax = await Categoria.findById(categoria).populate('categoria');
+        const categoriax = await Categoria.findById(categoria);//.populate('categoria');
         console.log('y la categoria es', categoriax);
 
         if (!categoriax) {
@@ -32,6 +32,7 @@ const validarCategoria = async(req = request, res = response, next) => {
         res.status(401).json({
             msg: 'Error de categoría'
         })
+        return;
     }
 
 }
