@@ -1,6 +1,6 @@
 const { response, json } = require("express");
 const { Producto } = require("../models");
-const producto = require("../models/producto");
+//const producto = require("../models/producto");
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
