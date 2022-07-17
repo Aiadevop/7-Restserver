@@ -10,7 +10,10 @@
     "engines": {
         "node": "18.3.0"
     },
-    "keywords": [],
+    "keywords": [
+        "example",
+        "heroku"
+    ],
     "author": "",
     "license": "ISC",
     "dependencies": {
