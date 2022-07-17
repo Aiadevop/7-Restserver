@@ -12,7 +12,7 @@ class Server {
         this.port = process.env.PORT;
 
         this.paths = {
-            auth:           '/api/usuarios',
+            auth:           '/api/auth',
             buscar:         '/api/buscar',
             categorias:     '/api/categorias',
             productos:      '/api/productos',
