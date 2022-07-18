@@ -40,11 +40,11 @@ const ProductoSchema = Schema({
 
 });
 
-// ProductoSchema.methods.toJSON = function() {
+ProductoSchema.methods.toJSON = function() {
 
-//     //Se saca la versión y el password y todos los demás aparecen.
-//     const { __v, estado, ...producto } = this.toObject();
-//     return producto;
-// }
+    //Se saca la versión y el password y todos los demás aparecen.
+    const { __v, estado, ...producto } = this.toObject();
+    return producto;
+}
 
 module.exports = model('Producto', ProductoSchema)
