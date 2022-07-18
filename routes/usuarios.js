@@ -21,7 +21,7 @@ const {
     usuariosPost,
     usuariosDelete,
     usuariosPatch
-} = require('../controllers/user.controller');
+} = require('../controllers/usuarios.controller');
 
 const router = Router();
 
@@ -60,6 +60,6 @@ router.delete('/:id', [
 ], usuariosDelete);
 
 //Ruta
-router.patch('/', usuariosPatch);
+//router.patch('/', usuariosPatch);
 
 module.exports = router;
