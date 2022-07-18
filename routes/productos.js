@@ -16,12 +16,12 @@ const router = Router();
 //{{url}}/api/productos
 
 //Obtener todas las Productos-publico
-router.get('/', 
-// obtenerProductos
-    res.status(200).json({
-       msg: "A ver si funciona"         
-    })
-);
+// router.get('/', 
+// // obtenerProductos
+//     res.status(200).json({
+//        msg: "A ver si funciona"         
+//     })
+// );
 
 // //Obtener una Producto por id - publico.
 // router.get('/:id', [
@@ -29,6 +29,7 @@ router.get('/',
 //     check ('id').custom(existeProducto),
 //     validarCampos
 // ],obtenerProducto);
+    router.get('/:id',console.log('hola'));
 
 // //Crear producto - privado con cualquier persona con token valido.
 // router.post('/', [
