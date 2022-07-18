@@ -20,9 +20,7 @@ router.get('/', [
     
 ],
 // obtenerProductos
-    res.status(200).json({
-       msg: "A ver si funciona"         
-    })
+    console.log('hola')
 );
 
 // //Obtener una Producto por id - publico.
