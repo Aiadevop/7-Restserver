@@ -1,36 +1,36 @@
-const { response } = require("express");
-const { ObjectId } = require("mongoose").Types;
-const { Usuario, Categoria,/* Producto */} = require('../models')
+// const { response } = require("express");
+// const { ObjectId } = require("mongoose").Types;
+// const { Usuario, Categoria,/* Producto */} = require('../models')
 
-const coleccionesPermitidas = [
-    'categoria',
-    // 'productos',
-    'roles',
-    'usuarios',
-];
+// const coleccionesPermitidas = [
+//     'categoria',
+//     // 'productos',
+//     'roles',
+//     'usuarios',
+// ];
 
-const buscarCategoria = async (termino = '', res = response) => {
-    const esMongoID = ObjectId.isValid(termino);
-    if (esMongoID) {
-        const categoria = await Categoria.findById(termino)
-        console.log(categoria);
-        return res.status(400).json({
-            results: (categoria) ? [categoria] : []
-        })
-    }
-    const regex = new RegExp(termino, 'i');
+// const buscarCategoria = async (termino = '', res = response) => {
+//     const esMongoID = ObjectId.isValid(termino);
+//     if (esMongoID) {
+//         const categoria = await Categoria.findById(termino)
+//         console.log(categoria);
+//         return res.status(400).json({
+//             results: (categoria) ? [categoria] : []
+//         })
+//     }
+//     const regex = new RegExp(termino, 'i');
 
-    const categorias = await Categoria.find({
-        $or: [{ categoria: regex }],
-        $and: [{ estado: true }]
-    });
+//     const categorias = await Categoria.find({
+//         $or: [{ categoria: regex }],
+//         $and: [{ estado: true }]
+//     });
 
 
-    return res.status(400).json({
-        results: (categorias) ? [categorias] : []
-    })
+//     return res.status(400).json({
+//         results: (categorias) ? [categorias] : []
+//     })
 
-}
+// }
 
 // const buscarProductos = async (termino = '', res = response) => {
 //     const esMongoID = ObjectId.isValid(termino);
