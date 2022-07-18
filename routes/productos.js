@@ -16,11 +16,11 @@ const router = Router();
 //{{url}}/api/productos
 
 //Obtener todas las Productos-publico
-router.get('/', [
-    
-],
+router.get('/', 
 // obtenerProductos
-    console.log('hola')
+    res.status(200).json({
+       msg: "A ver si funciona"         
+    })
 );
 
 // //Obtener una Producto por id - publico.
