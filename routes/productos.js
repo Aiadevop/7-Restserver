@@ -1,4 +1,4 @@
-// const { Router, response } = require('express');
+const { Router, response } = require('express');
 // const { check } = require('express-validator');
 // const { crearProducto, obtenerProducto, obtenerProductos, actualizarProducto, borrarProducto } = require('../controllers/Productos.controller');
 // const { existeProducto} = require('../helpers/db-validators');
@@ -11,14 +11,19 @@
 //     validarCategoria
 // } = require('../middlewares');
 
-// const router = Router();
+const router = Router();
 
-// //{{url}}/api/productos
+//{{url}}/api/productos
 
-// //Obtener todas las Productos-publico
-// router.get('/', [
+//Obtener todas las Productos-publico
+router.get('/', [
     
-// ],obtenerProductos);
+],
+// obtenerProductos
+    res.status(200).json({
+       msg: "A ver si funciona"         
+    })
+);
 
 // //Obtener una Producto por id - publico.
 // router.get('/:id', [
@@ -55,4 +60,4 @@
 
 
 
-// module.exports = router;
+module.exports = router;
