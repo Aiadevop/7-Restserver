@@ -110,3 +110,11 @@ URI 2 *
 View Documentation
 Publish 
 https://documenter.getpostman.com/view/21497344/UzQsw73y
+
+183. Subir archivos npm i express-fileupload
+ cargar middleware en el server
+
+ El uploads.controller se ha descargado del ejemplo de github de fileupload.
+ Hacemos algunas modificaciones para que guarde nuestro archivo en la carpeta uploads.
+
+Para ubicar y cambiar el nombre volvemos a instalar npm i uuid

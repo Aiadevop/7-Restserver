@@ -1,6 +1,11 @@
 const { Router, response } = require('express');
 const { check } = require('express-validator');
-const { crearCategoria, obtenerCategoria, obtenerCategorias, actualizarCategoria, borrarCategoria } = require('../controllers/categorias.controller');
+const { 
+    crearCategoria, 
+    obtenerCategoria, 
+    obtenerCategorias, 
+    actualizarCategoria, 
+    borrarCategoria } = require('../controllers/categorias.controller');
 const { existeCategoria} = require('../helpers/db-validators');
 
 
