@@ -1,3 +1,5 @@
+const path = require ('path');
+const fs = require ('fs');
 const { response } = require("express");
 const { subirArchivo } = require("../helpers");
 
@@ -57,19 +59,34 @@ const actualizarImagen = async (req, res = response) => {
             return res.status(500).json({ msg: 'Se me olvidó validar esto' })
       
     }
-
-    //he quitado el try-catch pq lo he validado con un middleware
     
-    // try {
+
+    // Limpiar imágenes previas.
+
+    try {
+
+        if (modelo.img) {
+            //Borrar imagen del servidor
+            const pathImagen = path.join(__dirname, '../uploads', coleccion, modelo.img);
+            if (fs.existsSync(pathImagen)) {
+                fs.unlinkSync(pathImagen)
+            }
+        }
+        
+    } catch (error) {
+        res.status(500).json({ msg: 'No se han podido limpiar las imágenes' })
+    }    
+    
+    try {
         const nombre = await subirArchivo(req.files, undefined, coleccion);
         modelo.img = await nombre;
     
         await modelo.save();
     
         res.json(modelo);
-    // } catch (msg) {
-    //     res.status(400).json({ msg: 'Debe cargar un archivo' })
-    // }
+    } catch (msg) {
+        res.status(400).json({ msg })
+    }
 
 }
 
