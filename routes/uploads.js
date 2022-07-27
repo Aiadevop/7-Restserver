@@ -1,6 +1,6 @@
 const { Router } = require ('express');
 const { check } = require('express-validator');
-const { cargarArchivo, actualizarImagen, mostrarImagen } = require('../controllers/uploads.controller');
+const { cargarArchivo, actualizarImagen, mostrarImagen, actualizarImagenCloudinary } = require('../controllers/uploads.controller');
 const { coleccionesPermitidas } = require('../helpers');
 const { validarArchivoSubir } = require('../middlewares');
 
@@ -21,6 +21,7 @@ router.put('/:coleccion/:id', [
     check('id','El id debe se de Mongo').isMongoId(),
     check('coleccion').custom(c => coleccionesPermitidas (c, ['usuarios','productos'])),
     validarCampos
-],actualizarImagen)
+],actualizarImagenCloudinary)
+//actualizarImagen)
 
 module.exports = router;
