@@ -137,20 +137,14 @@ const mostrarImagen = async (req, res= response) => {
     try {
 
         if (!modelo.img) {
-            //Borrar imagen del servidor
-            //const pathImagen = path.join(__dirname, '../uploads', coleccion, modelo.img);
             const imgNotFound = path.join(__dirname, '../assets/no-image.jpg')
-            return res.sendFile(imgNotFound)
-            
+            return res.sendFile(imgNotFound)            
         }
         return res.json(modelo.img)
-
-
         
     } catch (error) {
         res.status(500).json({ msg: 'No se han podido limpiar las imágenes' })
-    }    
-    
+    }       
 
 }
 
