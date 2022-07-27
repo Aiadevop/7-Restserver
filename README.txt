@@ -118,3 +118,6 @@ https://documenter.getpostman.com/view/21497344/UzQsw73y
  Hacemos algunas modificaciones para que guarde nuestro archivo en la carpeta uploads.
 
 Para ubicar y cambiar el nombre volvemos a instalar npm i uuid
+
+Para que cree directamente las carpetas con la extensión upload integramos createParentPath
+        La configuracion la hacemos en el middleware de nuestro server
